@@ -4,6 +4,7 @@ import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/onboarding/onboarding_controller.dart';
 import 'package:newsz/src/presentation/onboarding/widgets/onboarding_images.dart';
 import 'package:newsz/src/presentation/onboarding/widgets/onboarding_titles.dart';
+import 'package:newsz/src/widgets/appbutton.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -41,6 +42,12 @@ class OnBoardingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Positioned(
+                    bottom: constraints.maxHeight * 0.05,
+                    left: constraints.maxWidth*0.3,
+                    child: SizedBox(
+                      width: constraints.maxWidth*0.45,
+                      child: AppButton(btntitle: "Next"))),
               ]);
             }),
           );

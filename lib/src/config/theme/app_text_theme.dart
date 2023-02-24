@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppTextTheme {
-  static final textTheme = ThemeData(
+class AppTheme {
+  static final appTheme = ThemeData(
       fontFamily: 'montserrat',
       textTheme: const TextTheme(
         headline1: TextStyle(

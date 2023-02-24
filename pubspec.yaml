@@ -81,8 +81,8 @@ flutter:
     - family: montserrat
       fonts:
         - asset: assets/fonts/Montserrat-Bold.ttf
-        - asset: assets/fonts/Monteserrat-Regular.ttf
-        - asset: assets/fonts/Monteserrat-SemiBold.ttf
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

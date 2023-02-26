@@ -37,17 +37,22 @@ class OnBoardingScreen extends StatelessWidget {
                       width: constraints.maxWidth * 0.7,
                       height: constraints.maxWidth * 0.6,
                       child: OnboardingTitles(
-                        pageController: controller.pageController,
+                        pageController: controller.titlecontroller,
                       ),
                     ),
                   ),
                 ),
                 Positioned(
                     bottom: constraints.maxHeight * 0.05,
-                    left: constraints.maxWidth*0.3,
+                    left: constraints.maxWidth * 0.3,
                     child: SizedBox(
-                      width: constraints.maxWidth*0.45,
-                      child: AppButton(btntitle: "Next"))),
+                        width: constraints.maxWidth * 0.45,
+                        child: Obx(
+                          () => AppButton(
+                              callback: () => controller.nextPage(),
+                              btntitle:
+                                  controller.isLastPage ? "Sign in" : "Next"),
+                        ))),
               ]);
             }),
           );

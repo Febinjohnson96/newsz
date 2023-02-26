@@ -13,7 +13,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => callback,
+      onTap:  callback,
       child: Container(
         decoration: BoxDecoration(
             color: redRibbon, borderRadius: BorderRadius.circular(15)),

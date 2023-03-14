@@ -2,6 +2,7 @@ import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/route/approute.dart';
+import 'package:newsz/src/config/theme/app_text_theme.dart';
 import 'package:newsz/src/core/utils/constants.dart';
 import 'injector.dart' as injector;
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: kMaterialAppTitle,
       getPages: appRoutes,
-      theme: FlexColorScheme.light(scheme: FlexScheme.blueWhale).toTheme,
+      theme: AppTheme.appTheme,
       darkTheme: FlexColorScheme.dark(scheme: FlexScheme.blueWhale).toTheme,
     );
   }

@@ -11,6 +11,7 @@ class OnboardingTitles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageView(
+      physics: const AlwaysScrollableScrollPhysics(),
       controller: pageController,
       children: [
         RichText(

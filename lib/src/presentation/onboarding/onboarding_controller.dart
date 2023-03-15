@@ -17,4 +17,10 @@ class OnboardingController extends GetxController {
     titlecontroller.nextPage(
         duration: const Duration(milliseconds: 3000), curve: Curves.ease);
   }
+
+  void routeToSignIn() {
+    if (isLastPage) {
+      Get.offAllNamed('/signin');
+    }
+  }
 }

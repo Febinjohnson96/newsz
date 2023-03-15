@@ -49,7 +49,9 @@ class OnBoardingScreen extends StatelessWidget {
                         width: constraints.maxWidth * 0.45,
                         child: Obx(
                           () => AppButton(
-                              callback: () => controller.nextPage(),
+                              callback: () => controller.isLastPage
+                                  ? controller.routeToSignIn()
+                                  : controller.nextPage(),
                               btntitle:
                                   controller.isLastPage ? "Sign in" : "Next"),
                         ))),

@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/presentation/onboarding/onboarding_controller.dart';
@@ -13,21 +14,25 @@ class OnBoardingScreen extends StatelessWidget {
         builder: (controller) {
           return Scaffold(
             body: LayoutBuilder(builder: (context, constraints) {
-              return PageView.builder(
-                  allowImplicitScrolling: true,
-                  itemCount: controller.listOfOnboardingContent.length,
-                  itemBuilder: (context, index) {
-                    return OnboardingContent(
-                      image: controller.listOfOnboardingContent[index].image,
-                      constraints: constraints,
-                      textPrimary:
-                          controller.listOfOnboardingContent[index].textPrimary,
-                      textSecondary: controller
-                          .listOfOnboardingContent[index].textSecondary,
-                      textTertiary: controller
-                          .listOfOnboardingContent[index].textTertiary,
-                    );
-                  });
+              return FadeInUp(
+                duration: const Duration(milliseconds: 1500),
+                delay: const Duration(milliseconds: 500),
+                child: PageView.builder(
+                    allowImplicitScrolling: true,
+                    itemCount: controller.listOfOnboardingContent.length,
+                    itemBuilder: (context, index) {
+                      return OnboardingContent(
+                        image: controller.listOfOnboardingContent[index].image,
+                        constraints: constraints,
+                        textPrimary:
+                            controller.listOfOnboardingContent[index].textPrimary,
+                        textSecondary: controller
+                            .listOfOnboardingContent[index].textSecondary,
+                        textTertiary: controller
+                            .listOfOnboardingContent[index].textTertiary,
+                      );
+                    }),
+              );
             }),
           );
         });

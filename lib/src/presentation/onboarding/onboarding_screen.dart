@@ -24,12 +24,13 @@ class OnBoardingScreen extends StatelessWidget {
                       return OnboardingContent(
                         image: controller.listOfOnboardingContent[index].image,
                         constraints: constraints,
-                        textPrimary:
-                            controller.listOfOnboardingContent[index].textPrimary,
+                        textPrimary: controller
+                            .listOfOnboardingContent[index].textPrimary,
                         textSecondary: controller
                             .listOfOnboardingContent[index].textSecondary,
                         textTertiary: controller
                             .listOfOnboardingContent[index].textTertiary,
+                        btnTitle: index > 2 ? "Sign in" : "Next",
                       );
                     }),
               );

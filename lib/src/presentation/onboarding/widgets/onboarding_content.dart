@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
+import 'package:newsz/src/widgets/appbutton.dart';
 
 class OnboardingContent extends StatelessWidget {
   const OnboardingContent({
@@ -9,6 +10,8 @@ class OnboardingContent extends StatelessWidget {
     required this.textTertiary,
     Key? key,
     required this.image,
+    required this.btnTitle,
+    this.callback,
   }) : super(key: key);
 
   final BoxConstraints constraints;
@@ -16,6 +19,8 @@ class OnboardingContent extends StatelessWidget {
   final String textSecondary;
   final String textTertiary;
   final String image;
+  final String btnTitle;
+  final VoidCallback? callback;
 
   @override
   Widget build(BuildContext context) {
@@ -58,12 +63,24 @@ class OnboardingContent extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontSize: 35,
                         ),
-                  )
+                  ),
                 ],
               ),
             ),
           ),
         ),
+        Positioned(
+          left: constraints.maxWidth*0.3,
+          bottom: constraints.maxHeight*0.03,
+          child: SizedBox(
+            height: constraints.maxHeight * 0.06,
+            width: constraints.maxWidth*0.4,
+            child: AppButton(
+              btntitle: btnTitle,
+              callback: callback,
+            ),
+          ),
+        )
       ],
     );
   }

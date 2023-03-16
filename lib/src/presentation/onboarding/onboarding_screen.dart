@@ -18,6 +18,8 @@ class OnBoardingScreen extends StatelessWidget {
                 duration: const Duration(milliseconds: 1500),
                 delay: const Duration(milliseconds: 500),
                 child: PageView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
+                  controller: controller.pageController,
                     allowImplicitScrolling: true,
                     itemCount: controller.listOfOnboardingContent.length,
                     itemBuilder: (context, index) {
@@ -30,7 +32,10 @@ class OnBoardingScreen extends StatelessWidget {
                             .listOfOnboardingContent[index].textSecondary,
                         textTertiary: controller
                             .listOfOnboardingContent[index].textTertiary,
-                        btnTitle: index > 2 ? "Sign in" : "Next",
+                        btnTitle: index > 1 ? "Sign in" : "Next",
+                        callback: () => index > 1
+                            ? controller.routeToSignIn()
+                            : controller.nextPage(),
                       );
                     }),
               );

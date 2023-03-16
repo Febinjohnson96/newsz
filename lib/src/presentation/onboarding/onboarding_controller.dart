@@ -6,8 +6,6 @@ import 'package:newsz/src/data/models/onboarding_model/onboarding_model.dart';
 class OnboardingController extends GetxController {
   final pageController = PageController();
   final titlecontroller = PageController();
-  final _isLastPage = false.obs;
-  bool get isLastPage => _isLastPage.value;
 
   List<OnboardingModel> get listOfOnboardingContent => [
         OnboardingModel(
@@ -28,19 +26,11 @@ class OnboardingController extends GetxController {
       ];
 
   void nextPage() {
-    if (pageController.page == 1) {
-      _isLastPage(true);
-    }
-    debugPrint(isLastPage.toString());
     pageController.nextPage(
-        duration: const Duration(milliseconds: 3000), curve: Curves.ease);
-    titlecontroller.nextPage(
-        duration: const Duration(milliseconds: 3000), curve: Curves.ease);
+        duration: const Duration(milliseconds: 1400), curve: Curves.ease);
   }
 
   void routeToSignIn() {
-    if (isLastPage) {
-      Get.offAllNamed('/signin');
-    }
+    Get.offAllNamed('/signin');
   }
 }

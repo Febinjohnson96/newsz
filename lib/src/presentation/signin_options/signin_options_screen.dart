@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/images/images.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
-import 'package:newsz/src/presentation/signin/signin_controller.dart';
+import 'package:newsz/src/presentation/signin_options/signin_options_controller.dart';
 import 'package:newsz/src/widgets/appbutton_with_icon.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
+class SignInOptionsScreen extends StatelessWidget {
+  const SignInOptionsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<SignInController>(
-        init: SignInController(),
+    return GetBuilder<SignInOptionsController>(
+        init: SignInOptionsController(),
         builder: (controller) {
           return Scaffold(
             body: SafeArea(
@@ -59,7 +59,8 @@ class SignInScreen extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline1
-                                    ?.copyWith(color: Colors.white, fontSize: 32),
+                                    ?.copyWith(
+                                        color: Colors.white, fontSize: 32),
                               ),
                             )
                           ],
@@ -97,13 +98,14 @@ class SignInScreen extends StatelessWidget {
                             child: const AppButtonWithIcon(
                               btntitle: 'Sign In with Apple ID',
                               btnColor: athensGrey,
-                              iconImagePath:
-                                  apple,
+                              iconImagePath: apple,
                               textColor: blueVogue,
                             ),
                           ),
                         ),
-                        const SizedBox(height: 5,),
+                        const SizedBox(
+                          height: 5,
+                        ),
                         RichText(
                             text: TextSpan(children: [
                           TextSpan(
@@ -112,7 +114,8 @@ class SignInScreen extends StatelessWidget {
                                   .textTheme
                                   .headline5
                                   ?.copyWith(
-                                      color: lynch, fontWeight: FontWeight.w500)),
+                                      color: lynch,
+                                      fontWeight: FontWeight.w500)),
                           TextSpan(
                               text: "Sign Up",
                               style: Theme.of(context)
@@ -126,7 +129,9 @@ class SignInScreen extends StatelessWidget {
                                   debugPrint("TESTss");
                                 })
                         ])),
-                         const SizedBox(height: 5,),
+                        const SizedBox(
+                          height: 5,
+                        ),
                       ],
                     ),
                   ),

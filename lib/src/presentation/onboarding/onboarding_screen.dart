@@ -33,6 +33,7 @@ class OnBoardingScreen extends StatelessWidget {
                         textTertiary: controller
                             .listOfOnboardingContent[index].textTertiary,
                         btnTitle: index > 1 ? "Sign in" : "Next",
+                        progress: controller.listOfOnboardingContent[index].progress,
                         callback: () => index > 1
                             ? controller.routeToSignIn()
                             : controller.nextPage(),

@@ -12,17 +12,20 @@ class OnboardingController extends GetxController {
             image: protest,
             textPrimary: "Get the latest news from",
             textSecondary: "\nreliable\nsources",
-            textTertiary: "."),
+            textTertiary: ".",
+            progress: 0.33),
         OnboardingModel(
             image: flags,
             textPrimary: "Still",
             textSecondary: " up to date",
-            textTertiary: "\nnews from all around the world"),
+            textTertiary: "\nnews from all around the world",
+            progress: 0.66),
         OnboardingModel(
             image: dome,
             textPrimary: "From art to politics,",
             textSecondary: "\nanything",
-            textTertiary: " in newz"),
+            textTertiary: " in newz",
+            progress: 1),
       ];
 
   void nextPage() {

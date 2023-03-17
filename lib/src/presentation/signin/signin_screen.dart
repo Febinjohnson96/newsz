@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:newsz/src/config/images/images.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/signin/signin_controller.dart';
 import 'package:newsz/src/widgets/appbutton_with_icon.dart';
@@ -30,7 +31,7 @@ class SignInScreen extends StatelessWidget {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(40),
                               child: Image.asset(
-                                "assets/images/signup/parliament.jpg",
+                                parliament,
                                 height: constraints.maxHeight * 0.5,
                                 width: constraints.maxWidth,
                                 fit: BoxFit.cover,
@@ -70,7 +71,7 @@ class SignInScreen extends StatelessWidget {
                           child: const AppButtonWithIcon(
                             btntitle: 'Continue with Email',
                             btnColor: redRibbon,
-                            iconImagePath: "assets/images/icons/mail1.png",
+                            iconImagePath: mail,
                           ),
                         ),
                       ),
@@ -82,7 +83,7 @@ class SignInScreen extends StatelessWidget {
                           child: const AppButtonWithIcon(
                             btntitle: 'Sign In with Google',
                             btnColor: athensGrey,
-                            iconImagePath: "assets/images/icons/google1.png",
+                            iconImagePath: google,
                             textColor: blueVogue,
                           ),
                         ),
@@ -96,7 +97,7 @@ class SignInScreen extends StatelessWidget {
                             btntitle: 'Sign In with Apple ID',
                             btnColor: athensGrey,
                             iconImagePath:
-                                "assets/images/icons/appleLogoBlack1.png",
+                                apple,
                             textColor: blueVogue,
                           ),
                         ),

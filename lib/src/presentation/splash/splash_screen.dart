@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/images/images.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';

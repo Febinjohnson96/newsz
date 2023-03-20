@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:newsz/src/presentation/auth/auth_screen.dart';
 import 'package:newsz/src/presentation/onboarding/onboarding_screen.dart';
 import 'package:newsz/src/presentation/signin_options/signin_options_screen.dart';
 import 'package:newsz/src/presentation/splash/splash_screen.dart';
@@ -19,8 +20,13 @@ List<GetPage> appRoutes = [
     page: () => const HomeView(),
   ),
   GetPage(
-    name: "/signin",
+    name: "/signinoptions",
     page: () => const SignInOptionsScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: "/auth",
+    page: () => const AuthScreen(),
     transition: Transition.fadeIn,
   ),
 ];

@@ -34,6 +34,6 @@ class OnboardingController extends GetxController {
   }
 
   void routeToSignIn() {
-    Get.offAllNamed('/signin');
+    Get.offAllNamed('/signinoptions');
   }
 }

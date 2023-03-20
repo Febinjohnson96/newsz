@@ -70,10 +70,11 @@ class SignInOptionsScreen extends StatelessWidget {
                               vertical: 10, horizontal: 20),
                           child: SizedBox(
                             height: constraints.maxHeight * 0.08,
-                            child: const AppButtonWithIcon(
+                            child: AppButtonWithIcon(
                               btntitle: 'Continue with Email',
                               btnColor: redRibbon,
                               iconImagePath: mail,
+                              callback: () => controller.routeToAuth(),
                             ),
                           ),
                         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsz/src/config/theme/appcolors.dart';
 
 class AppTheme {
   static final appTheme = ThemeData(
@@ -44,5 +45,17 @@ class AppTheme {
           fontWeight: FontWeight.w500,
           fontSize: 24,
         ),
-      ));
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: athensGrey,
+          border: OutlineInputBorder(
+              borderSide: const BorderSide(color: athensGrey),
+              borderRadius: BorderRadius.circular(20)),
+          focusedBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: athensGrey),
+              borderRadius: BorderRadius.circular(20)),
+          enabledBorder: OutlineInputBorder(
+              borderSide: const BorderSide(color: athensGrey),
+              borderRadius: BorderRadius.circular(20))));
 }

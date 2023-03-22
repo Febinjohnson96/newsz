@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/auth/auth_controller.dart';
+import 'package:newsz/src/presentation/auth/auth_sub_features/sign_in/sign_in_screen.dart';
+import 'package:newsz/src/presentation/auth/auth_sub_features/sign_up/sign_up_screen.dart';
+import 'package:newsz/src/presentation/auth/widgets/view_change_button.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
@@ -24,11 +26,11 @@ class AuthScreen extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: GestureDetector(
                         // behavior: HitTestBehavior.translucent,
-                        onTap: ()=>controller.onTouchBackButton(),
+                        onTap: () => controller.onTouchBackButton(),
                         child: AbsorbPointer(
                           child: SizedBox(
                             height: constraints.maxHeight * .04,
-                            width: constraints.maxWidth*.02,
+                            width: constraints.maxWidth * .02,
                             child: const Icon(
                               Icons.arrow_back,
                             ),
@@ -48,31 +50,26 @@ class AuthScreen extends StatelessWidget {
                             width: 10,
                           ),
                           scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) => Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: blueVogue,
-                            ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Center(
-                                  child: Text(
-                                controller.authViews[index],
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline6
-                                    ?.copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              )),
+                          itemBuilder: (context, index) => Obx(
+                            () => ViewChangebutton(
+                              buttonTitle: controller.authViews[index],
+                              isSelected: controller.selectedView ==
+                                  controller.authViews[index],
+                              callback: () => controller
+                                  .swapView(controller.authViews[index]),
                             ),
                           ),
                           itemCount: controller.authViews.length,
                         ),
                       ),
-                    )
+                    ),
+                    SizedBox(
+                      height: constraints.maxHeight * 0.8,
+                      child: Obx(() =>
+                          controller.selectedView == controller.authViews.first
+                              ? const SignInScreen()
+                              : const SignUpScreen()),
+                    ),
                   ],
                 );
               }),

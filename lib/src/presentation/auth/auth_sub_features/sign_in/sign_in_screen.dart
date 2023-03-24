@@ -23,8 +23,8 @@ class SignInScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 15),
                     child: Text(
                       "Let's Sign\nYou In",
                       style: Theme.of(context)
@@ -58,7 +58,8 @@ class SignInScreen extends StatelessWidget {
                         icon: controller.isPassWordNotVisible
                             ? FontAwesomeIcons.eye
                             : FontAwesomeIcons.eyeSlash,
-                        callback: (p0) => controller.changePasswordVisibilty(p0),
+                        callback: (p0) =>
+                            controller.changePasswordVisibilty(p0),
                       ),
                     ),
                   ),
@@ -68,8 +69,12 @@ class SignInScreen extends StatelessWidget {
                         onPressed: () {},
                         child: Text(
                           "forgot password ?",
-                          style: Theme.of(context).textTheme.headline6?.copyWith(
-                              color: blueVogue, fontWeight: FontWeight.w500),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline6
+                              ?.copyWith(
+                                  color: blueVogue,
+                                  fontWeight: FontWeight.w500),
                         )),
                   ),
                   const SizedBox(
@@ -90,11 +95,12 @@ class SignInScreen extends StatelessWidget {
                   Center(
                       child: Text(
                     "Or sign in with",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline6
-                        ?.copyWith(fontWeight: FontWeight.w500, color: blueVogue),
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                        fontWeight: FontWeight.w500, color: blueVogue),
                   )),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: SizedBox(
@@ -119,7 +125,10 @@ class SignInScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(
+                    height: 50,
+                  ),
                 ],
               ),
             );

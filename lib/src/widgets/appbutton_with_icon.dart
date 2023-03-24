@@ -23,7 +23,7 @@ class AppButtonWithIcon extends StatelessWidget {
         decoration: BoxDecoration(
             color: btnColor, borderRadius: BorderRadius.circular(15)),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
+          padding: const EdgeInsets.symmetric(vertical: 14,horizontal: 16),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

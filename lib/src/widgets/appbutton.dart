@@ -18,14 +18,14 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
             color: redRibbon, borderRadius: BorderRadius.circular(15)),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 16),
+          padding: const EdgeInsets.symmetric( horizontal: 16),
           child: Center(
             child: Text(
               btntitle,
               style: Theme.of(context)
                   .textTheme
                   .headline6
-                  ?.copyWith(color: Colors.white),
+                  ?.copyWith(color: Colors.white,fontWeight: FontWeight.w600),
             ),
           ),
         ),

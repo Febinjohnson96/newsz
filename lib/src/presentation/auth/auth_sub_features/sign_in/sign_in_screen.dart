@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
@@ -45,6 +46,23 @@ class SignInScreen extends StatelessWidget {
                       icon: FontAwesomeIcons.envelope,
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Obx(
+                      () => controller.emailError.isNotEmpty
+                          ? Flash(
+                              duration: const Duration(milliseconds: 1000),
+                              child: Text(
+                                controller.emailError,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(color: redRibbon),
+                              ),
+                            )
+                          : const SizedBox(),
+                    ),
+                  ),
                   const SizedBox(
                     height: 40,
                   ),
@@ -61,6 +79,23 @@ class SignInScreen extends StatelessWidget {
                         callback: (p0) =>
                             controller.changePasswordVisibilty(p0),
                       ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Obx(
+                      () => controller.passWordError.isNotEmpty
+                          ? Flash(
+                              duration: const Duration(milliseconds: 1000),
+                              child: Text(
+                                controller.passWordError,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(color: redRibbon),
+                              ),
+                            )
+                          : const SizedBox(),
                     ),
                   ),
                   Padding(
@@ -86,7 +121,7 @@ class SignInScreen extends StatelessWidget {
                         height: constraints.maxHeight * 0.1,
                         child: AppButton(
                           btntitle: "Sign In",
-                          callback: () {},
+                          callback: () => controller.onClickSignInButton(),
                         )),
                   ),
                   const SizedBox(

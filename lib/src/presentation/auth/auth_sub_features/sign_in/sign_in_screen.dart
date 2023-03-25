@@ -118,7 +118,7 @@ class SignInScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: SizedBox(
-                        height: constraints.maxHeight * 0.1,
+                        height: constraints.maxHeight * 0.08,
                         child: AppButton(
                           btntitle: "Sign In",
                           callback: () => controller.onClickSignInButton(),

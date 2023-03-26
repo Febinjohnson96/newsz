@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class AuthTextField extends StatelessWidget {
-  const AuthTextField(
+class AppTextField extends StatelessWidget {
+  const AppTextField(
       {Key? key,
       required this.isPassword,
       required this.label,

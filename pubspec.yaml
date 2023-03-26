@@ -3,7 +3,7 @@ description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -32,7 +32,7 @@ dependencies:
   get: ^4.6.5
   http: ^0.13.5
   equatable: ^2.0.5
-  flex_color_scheme: 
+  flex_color_scheme:
   get_it: ^7.2.0
   animate_do: ^3.0.2
   percent_indicator: ^4.2.3
@@ -69,14 +69,13 @@ flutter_icons:
     icon_size: 48 # min:48, max:256, default: 48
   macos:
     generate: true
-    image_path: "assets/images/icons/newz.png"  
+    image_path: "assets/images/icons/newz.png"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -88,6 +87,7 @@ flutter:
     - assets/images/onboarding/
     - assets/images/signup/
     - assets/images/icons/
+    - assets/images/forgot password/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

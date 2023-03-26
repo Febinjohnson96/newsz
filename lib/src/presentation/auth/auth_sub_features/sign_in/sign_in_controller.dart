@@ -28,6 +28,10 @@ class SignInController extends GetxController {
     }
   }
 
+  void routeToForgotPassword() {
+    Get.toNamed("/forgot_password");
+  }
+
   bool validateUserCredential() {
     if (emailController.text.isEmpty) {
       _emailError("Email is empty");

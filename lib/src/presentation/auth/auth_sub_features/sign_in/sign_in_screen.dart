@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:newsz/src/config/images/images.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/auth/auth_sub_features/sign_in/sign_in_controller.dart';
-import 'package:newsz/src/presentation/auth/widgets/auth_text_field.dart';
+import 'package:newsz/src/widgets/app_text_field.dart';
 import 'package:newsz/src/widgets/appbutton.dart';
 import 'package:newsz/src/widgets/appbutton_with_icon.dart';
 
@@ -39,7 +39,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: AuthTextField(
+                    child: AppTextField(
                       textController: controller.emailController,
                       label: "E-mail",
                       isPassword: false,
@@ -69,7 +69,7 @@ class SignInScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Obx(
-                      () => AuthTextField(
+                      () => AppTextField(
                         textController: controller.passWordController,
                         label: "Password",
                         isPassword: controller.isPassWordNotVisible,
@@ -101,7 +101,7 @@ class SignInScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () => controller.routeToForgotPassword(),
                         child: Text(
                           "forgot password ?",
                           style: Theme.of(context)

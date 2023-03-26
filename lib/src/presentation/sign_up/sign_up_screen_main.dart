@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/images/images.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
-import 'package:newsz/src/presentation/auth/widgets/auth_text_field.dart';
+import 'package:newsz/src/widgets/app_text_field.dart';
 import 'package:newsz/src/presentation/sign_up/sign_up_controller_main.dart';
 import 'package:newsz/src/widgets/appbutton.dart';
 import 'package:newsz/src/widgets/appbutton_with_icon.dart';
@@ -44,7 +44,7 @@ class SignUpScreenMain extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: AuthTextField(
+                        child: AppTextField(
                           isPassword: false,
                           label: "username",
                           textController: controller.userNameController,
@@ -56,7 +56,7 @@ class SignUpScreenMain extends StatelessWidget {
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: AuthTextField(
+                        child: AppTextField(
                           isPassword: false,
                           label: "Email",
                           textController: controller.emailController,
@@ -69,7 +69,7 @@ class SignUpScreenMain extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: Obx(
-                          () => AuthTextField(
+                          () => AppTextField(
                             isPassword: controller.isPassWordNotVisible,
                             label: "Password",
                             textController: controller.passWordController,

@@ -101,7 +101,7 @@ class SignInScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: TextButton(
-                        onPressed: () {},
+                        onPressed: () => controller.routeToForgotPassword(),
                         child: Text(
                           "forgot password ?",
                           style: Theme.of(context)

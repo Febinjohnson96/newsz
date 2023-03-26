@@ -22,6 +22,7 @@ class SignInOptionsScreen extends StatelessWidget {
                   duration: const Duration(milliseconds: 1400),
                   delay: const Duration(milliseconds: 300),
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
                     child: Column(
                       children: [
                         Stack(
@@ -127,7 +128,7 @@ class SignInOptionsScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  debugPrint("TESTss");
+                                  controller.routeToSignUp();
                                 })
                         ])),
                         const SizedBox(

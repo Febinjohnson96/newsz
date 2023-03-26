@@ -29,7 +29,7 @@ class AppButtonWithIcon extends StatelessWidget {
             children: [
               Image.asset(
                 iconImagePath,
-                height: 50,
+                height: 40,
                 fit: BoxFit.cover,
               ),
               const SizedBox(width: 10,),

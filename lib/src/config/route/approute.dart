@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:newsz/src/presentation/auth/auth_screen.dart';
 import 'package:newsz/src/presentation/onboarding/onboarding_screen.dart';
+import 'package:newsz/src/presentation/sign_up/sign_up_screen_main.dart';
 import 'package:newsz/src/presentation/signin_options/signin_options_screen.dart';
 import 'package:newsz/src/presentation/splash/splash_screen.dart';
 
@@ -27,6 +28,11 @@ List<GetPage> appRoutes = [
   GetPage(
     name: "/auth",
     page: () => const AuthScreen(),
+    transition: Transition.fadeIn,
+  ),
+  GetPage(
+    name: "/signup",
+    page: () => const SignUpScreenMain(),
     transition: Transition.fadeIn,
   ),
 ];

@@ -6,26 +6,30 @@ class AppButton extends StatelessWidget {
     Key? key,
     required this.btntitle,
     this.callback,
+    this.inActiveColor,
+    this.inActiveTextColor,
   }) : super(key: key);
   final String btntitle;
   final VoidCallback? callback;
+  final Color? inActiveColor;
+  final Color? inActiveTextColor;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:  callback,
+      onTap: callback,
       child: Container(
         decoration: BoxDecoration(
-            color: redRibbon, borderRadius: BorderRadius.circular(15)),
+            color: inActiveColor ?? redRibbon,
+            borderRadius: BorderRadius.circular(15)),
         child: Padding(
-          padding: const EdgeInsets.symmetric( horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Center(
             child: Text(
               btntitle,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: Colors.white,fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.headline6?.copyWith(
+                  color: inActiveTextColor ?? Colors.white,
+                  fontWeight: FontWeight.w600),
             ),
           ),
         ),

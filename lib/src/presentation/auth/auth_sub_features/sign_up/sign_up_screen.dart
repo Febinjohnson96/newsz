@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -57,6 +58,23 @@ class SignUpScreen extends StatelessWidget {
                       icon: FontAwesomeIcons.envelope,
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Obx(
+                      () => controller.emailError.isNotEmpty
+                          ? Flash(
+                              duration: const Duration(milliseconds: 1000),
+                              child: Text(
+                                controller.emailError,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(color: redRibbon),
+                              ),
+                            )
+                          : const SizedBox(),
+                    ),
+                  ),
                   const SizedBox(
                     height: 30,
                   ),
@@ -73,6 +91,23 @@ class SignUpScreen extends StatelessWidget {
                         callback: (p0) =>
                             controller.changePasswordVisibilty(p0),
                       ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Obx(
+                      () => controller.emailError.isNotEmpty
+                          ? Flash(
+                              duration: const Duration(milliseconds: 1000),
+                              child: Text(
+                                controller.passWordError,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline6
+                                    ?.copyWith(color: redRibbon),
+                              ),
+                            )
+                          : const SizedBox(),
                     ),
                   ),
                   Padding(
@@ -130,7 +165,11 @@ class SignUpScreen extends StatelessWidget {
                                   inActiveColor: athensGrey,
                                   inActiveTextColor: blueVogue,
                                 )
-                              : const AppButton(btntitle: "Sign Up"),
+                              : AppButton(
+                                  btntitle: "Sign Up",
+                                  callback: () =>
+                                      controller.onClickSignUpButton(),
+                                ),
                         )),
                   ),
                   const SizedBox(

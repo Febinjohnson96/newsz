@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get_it/get_it.dart';
+import 'package:newsz/src/data/data_sources/local/hive_provider.dart';
 import 'package:newsz/src/data/data_sources/remote/api_provider.dart';
 import 'package:newsz/src/domain/repositories/articles_repository.dart';
 import 'package:newsz/src/domain/usecases/get_articles_usecase.dart';
@@ -17,4 +19,8 @@ Future<void> init() async {
 
   //core
   injector.registerLazySingleton<ApiProvider>(() => ApiProvider());
+
+  //hive
+  injector.registerSingleton<HiveProvider>(HiveProvider());
+  debugPrint("Dependency Injection");
 }

@@ -10,9 +10,9 @@ class HomeView extends StatelessWidget {
     return GetBuilder<HomeController>(
         init: HomeController(),
         builder: (controller) {
-          return  const Scaffold(
-            body: Center(
-              child: Text("home"),
+          return Scaffold(
+            body: Column(
+              children: [],
             ),
           );
         });

@@ -15,4 +15,13 @@ class ArticlesRepositoryImpl implements ArticlesRepository {
     final breakingNews = BreakingNewsResponseModel.fromJson(response);
     return breakingNews;
   }
+
+  @override
+  Future<BreakingNewsResponseModel> getCategorizedNewsArticles(
+      ArticleRequestParams params) async {
+    final response = await _apiProvider.get(
+        endpoint: "/v2/everything", params: params.toMap());
+    final everyArticles = BreakingNewsResponseModel.fromJson(response);
+    return everyArticles;
+  }
 }

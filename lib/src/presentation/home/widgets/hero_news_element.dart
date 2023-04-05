@@ -8,11 +8,13 @@ class HeroNewsElement extends StatelessWidget {
     required this.imageUrl,
     required this.title,
     required this.constraints,
+    this.source,
   }) : super(key: key);
 
   final String imageUrl;
   final String title;
   final BoxConstraints constraints;
+  final String? source;
 
   @override
   Widget build(BuildContext context) {
@@ -30,9 +32,10 @@ class HeroNewsElement extends StatelessWidget {
                 child: imageUrl.isNotEmpty
                     ? Image.network(
                         errorBuilder: (context, error, stackTrace) =>
-                            Image.asset(noImage,
-                            fit: BoxFit.cover,
-                            ),
+                            Image.asset(
+                          noImage,
+                          fit: BoxFit.cover,
+                        ),
                         imageUrl,
                         fit: BoxFit.cover,
                       )
@@ -59,6 +62,17 @@ class HeroNewsElement extends StatelessWidget {
                   .headline4
                   ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
+          ),
+        ),
+        Positioned(
+          left: constraints.maxWidth * 0.06,
+          bottom: constraints.maxHeight*0.05,
+          child: Text(
+            source ?? '',
+            style: Theme.of(context)
+                .textTheme
+                .headline6
+                ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         )
       ],

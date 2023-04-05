@@ -27,14 +27,14 @@ class HomeView extends StatelessWidget {
                         ),
                       )
                     : FadeInUp(
-                      child: LayoutBuilder(builder: (context, constraints) {
+                        child: LayoutBuilder(builder: (context, constraints) {
                           return SingleChildScrollView(
                             physics: const BouncingScrollPhysics(),
                             child: Column(
                               children: [
                                 Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 15),
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15),
                                   child: SizedBox(
                                     height: constraints.maxHeight * 0.6,
                                     child: ListView.separated(
@@ -47,10 +47,13 @@ class HomeView extends StatelessWidget {
                                       itemCount: controller.articles.length,
                                       itemBuilder: (context, index) {
                                         return HeroNewsElement(
+                                          source: controller
+                                              .articles[index].source?.name,
                                           imageUrl: controller
                                               .articles[index].urlToImage
                                               .toString(),
-                                          title: controller.articles[index].title
+                                          title: controller
+                                              .articles[index].title
                                               .toString(),
                                           constraints: constraints,
                                         );
@@ -62,7 +65,7 @@ class HomeView extends StatelessWidget {
                             ),
                           );
                         }),
-                    ),
+                      ),
               ));
         });
   }

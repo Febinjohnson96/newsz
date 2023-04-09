@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/home/home_controller.dart';
+import 'package:newsz/src/presentation/home/widgets/category_button.dart';
 import 'package:newsz/src/presentation/home/widgets/hero_news_element.dart';
 
 class HomeView extends StatelessWidget {
@@ -30,12 +31,12 @@ class HomeView extends StatelessWidget {
                         child: LayoutBuilder(builder: (context, constraints) {
                           return SingleChildScrollView(
                             physics: const BouncingScrollPhysics(),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 15),
-                                  child: SizedBox(
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Column(
+                                children: [
+                                  SizedBox(
                                     height: constraints.maxHeight * 0.6,
                                     child: ListView.separated(
                                       separatorBuilder: (context, index) =>
@@ -60,8 +61,37 @@ class HomeView extends StatelessWidget {
                                       },
                                     ),
                                   ),
-                                )
-                              ],
+                                  const SizedBox(height: 20),
+                                  SizedBox(
+                                    height: constraints.maxHeight * 0.06,
+                                    child: ListView.separated(
+                                        physics: const BouncingScrollPhysics(),
+                                        scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context, index) {
+                                          return Obx(
+                                            () => CategoryButton(
+                                              callback: () => controller
+                                                  .selectCategories(controller
+                                                          .newsCategoriesList[
+                                                      index]),
+                                              isSelected: controller
+                                                      .selectedcategory ==
+                                                  controller.newsCategoriesList[
+                                                      index],
+                                              title: controller
+                                                  .newsCategoriesList[index],
+                                            ),
+                                          );
+                                        },
+                                        separatorBuilder: (context, index) =>
+                                            const SizedBox(
+                                              width: 8,
+                                            ),
+                                        itemCount: controller
+                                            .newsCategoriesList.length),
+                                  )
+                                ],
+                              ),
                             ),
                           );
                         }),

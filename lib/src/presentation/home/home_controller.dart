@@ -17,7 +17,10 @@ class HomeController extends GetxController {
   final _isloading = false.obs;
   bool get isLoading => _isloading.value;
 
-  final _selectedcategory = "latest".obs;
+  List<String> get newsCategoriesList =>
+      ["Latest", "Business", "Politics", "Sports", "Entertainment"];
+
+  final _selectedcategory = "Latest".obs;
   String get selectedcategory => _selectedcategory.value;
 
   @override
@@ -46,5 +49,9 @@ class HomeController extends GetxController {
     _articles(response.articles);
     _newsCategory(newsCategories.articles);
     _isloading(false);
+  }
+
+  void selectCategories(String category) {
+    _selectedcategory(category);
   }
 }

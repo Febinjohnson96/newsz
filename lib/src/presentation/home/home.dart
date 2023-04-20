@@ -63,7 +63,7 @@ class HomeView extends StatelessWidget {
                                   ),
                                   const SizedBox(height: 20),
                                   SizedBox(
-                                    height: constraints.maxHeight * 0.06,
+                                    height: constraints.maxHeight * 0.07,
                                     child: ListView.separated(
                                         physics: const BouncingScrollPhysics(),
                                         scrollDirection: Axis.horizontal,
@@ -89,7 +89,14 @@ class HomeView extends StatelessWidget {
                                             ),
                                         itemCount: controller
                                             .newsCategoriesList.length),
-                                  )
+                                  ),
+                                  SizedBox(
+                                    width: constraints.maxWidth,
+                                    height: constraints.maxHeight,
+                                    child: ListView.separated(itemBuilder: (context,index){
+                                      return Text(controller.newsCategory[index].author.toString());
+                                    }, separatorBuilder: (context,index)=>const SizedBox(height: 10,), itemCount: controller.newsCategory.length),
+                                  ),
                                 ],
                               ),
                             ),

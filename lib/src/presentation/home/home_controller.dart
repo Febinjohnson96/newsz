@@ -32,23 +32,28 @@ class HomeController extends GetxController {
   dynamic fetchNewsFromApi() async {
     _isloading(true);
     debugPrint("ApiCAll");
+    await fetchBreakingNews();
+    await fetCatergorizedNews();
+    _isloading(false);
+  }
+
+  dynamic fetchBreakingNews() async {
     const breakingNewsparams = ArticleRequestParams(
         apiKey: kApiKey, language: 'en', category: '', page: 1, pageSize: 20);
+    final response = await apiCall.getBreakingNewsArticles(breakingNewsparams);
+    _articles(response.articles);
+  }
+
+  dynamic fetCatergorizedNews() async {
     final newsCategory = ArticleRequestParams(
         apiKey: kApiKey,
         language: 'en',
         category: selectedcategory,
         page: 1,
         pageSize: 20);
-    final response = await apiCall.getBreakingNewsArticles(breakingNewsparams);
     final newsCategories =
         await apiCall.getCategorizedNewsArticles(newsCategory);
-    response.articles?.forEach((element) {
-      debugPrint(element.author);
-    });
-    _articles(response.articles);
     _newsCategory(newsCategories.articles);
-    _isloading(false);
   }
 
   void selectCategories(String category) {

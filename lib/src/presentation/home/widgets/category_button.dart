@@ -43,10 +43,10 @@ class _CategoryButtonState extends State<CategoryButton> {
         child: Container(
           decoration: BoxDecoration(
               color: widget.isSelected ? blueVogue : Colors.transparent,
-              borderRadius: BorderRadius.circular(10)),
+              borderRadius: BorderRadius.circular(20)),
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.symmetric(vertical: 12,horizontal: 30),
               child: Text(
                 widget.title,
                 style: Theme.of(context).textTheme.headline6?.copyWith(

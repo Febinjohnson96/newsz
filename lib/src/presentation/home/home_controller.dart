@@ -17,6 +17,9 @@ class HomeController extends GetxController {
   final _isloading = false.obs;
   bool get isLoading => _isloading.value;
 
+  final _categoryIsLoading = false.obs;
+  bool get catergoryIsLoading => _categoryIsLoading.value;
+
   List<String> get newsCategoriesList =>
       ["Latest", "Business", "Politics", "Sports", "Entertainment"];
 
@@ -56,7 +59,10 @@ class HomeController extends GetxController {
     _newsCategory(newsCategories.articles);
   }
 
-  void selectCategories(String category) {
+  void selectCategories(String category) async{
+    _categoryIsLoading(true);
     _selectedcategory(category);
+    await fetCatergorizedNews();
+    _categoryIsLoading(false);
   }
 }

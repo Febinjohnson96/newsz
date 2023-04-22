@@ -5,6 +5,7 @@ import 'package:newsz/src/config/theme/appcolors.dart';
 import 'package:newsz/src/presentation/home/home_controller.dart';
 import 'package:newsz/src/presentation/home/widgets/category_button.dart';
 import 'package:newsz/src/presentation/home/widgets/hero_news_element.dart';
+import 'package:newsz/src/presentation/home/widgets/news_card_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -90,13 +91,52 @@ class HomeView extends StatelessWidget {
                                         itemCount: controller
                                             .newsCategoriesList.length),
                                   ),
-                                  SizedBox(
-                                    width: constraints.maxWidth,
-                                    height: constraints.maxHeight,
-                                    child: ListView.separated(itemBuilder: (context,index){
-                                      return Text(controller.newsCategory[index].author.toString());
-                                    }, separatorBuilder: (context,index)=>const SizedBox(height: 10,), itemCount: controller.newsCategory.length),
+                                  const SizedBox(
+                                    height: 20,
                                   ),
+                                  Obx(
+                                    () => controller.catergoryIsLoading
+                                        ? const CircularProgressIndicator(
+                                            strokeWidth: 6,
+                                            color: redRibbon,
+                                          )
+                                        : SizedBox(
+                                            width: constraints.maxWidth,
+                                            height: constraints.maxHeight,
+                                            child: ListView.separated(
+                                                physics:
+                                                    const BouncingScrollPhysics(),
+                                                itemBuilder: (context, index) {
+                                                  return NewsCardWidget(
+                                                    constraints: constraints,
+                                                    hasNoImage: controller
+                                                                .newsCategory[
+                                                                    index]
+                                                                .urlToImage ==
+                                                            "null" ||
+                                                        controller
+                                                                .newsCategory[
+                                                                    index]
+                                                                .urlToImage ==
+                                                            null,
+                                                    imageUrl: controller
+                                                        .newsCategory[index]
+                                                        .urlToImage
+                                                        .toString(),
+                                                  );
+                                                },
+                                                separatorBuilder:
+                                                    (context, index) =>
+                                                        const SizedBox(
+                                                          height: 10,
+                                                        ),
+                                                itemCount: controller
+                                                    .newsCategory.length),
+                                          ),
+                                  ),
+                                  const SizedBox(
+                                    height: 20,
+                                  )
                                 ],
                               ),
                             ),

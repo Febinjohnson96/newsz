@@ -6,6 +6,7 @@ import 'package:newsz/src/presentation/home/home_controller.dart';
 import 'package:newsz/src/presentation/home/widgets/category_button.dart';
 import 'package:newsz/src/presentation/home/widgets/hero_news_element.dart';
 import 'package:newsz/src/presentation/home/widgets/news_card_widget.dart';
+import 'package:newsz/src/widgets/app_botton_nav_bar.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class HomeView extends StatelessWidget {
         init: HomeController(),
         builder: (controller) {
           return Scaffold(
+              bottomNavigationBar: const AppBottomNavbar(),
               appBar: AppBar(
                 backgroundColor: Colors.transparent,
                 elevation: 0,

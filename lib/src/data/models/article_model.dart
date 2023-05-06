@@ -30,9 +30,9 @@ class ArticleModel extends Article {
       source: SourceModel.fromJson(map['source'] as Map<String, dynamic>),
       author: map['author'],
       title: map['title'] as String,
-      description: map['description'] as String,
+      description: map['description'],
       url: map['url'] as String,
-      urlToImage: map['urlToImage'] as String,
+      urlToImage: map['urlToImage'],
       publishedAt: map['publishedAt'] as String,
       content: map['content'],
     );

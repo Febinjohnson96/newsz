@@ -15,6 +15,7 @@ class ArticleRequestParams {
 
   Map<String, String> toMap() {
     return {
+      "q": category ?? '',
       "language": language ?? '',
       "page": "$page",
       "apiKey": apiKey ?? '',

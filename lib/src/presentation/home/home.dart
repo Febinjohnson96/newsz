@@ -123,6 +123,16 @@ class HomeView extends StatelessWidget {
                                                         .newsCategory[index]
                                                         .urlToImage
                                                         .toString(),
+                                                    category: controller
+                                                        .selectedcategory,
+                                                    title: controller
+                                                            .newsCategory[index]
+                                                            .title ??
+                                                        '',
+                                                    publishedAt: controller
+                                                            .newsCategory[index]
+                                                            .publishedAt ??
+                                                        '',
                                                   );
                                                 },
                                                 separatorBuilder:

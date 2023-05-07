@@ -1,31 +1,27 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:newsz/src/config/theme/appcolors.dart';
+import 'package:sliding_clipped_nav_bar/sliding_clipped_nav_bar.dart';
 
 class AppBottomNavbar extends StatelessWidget {
-  const AppBottomNavbar({Key? key}) : super(key: key);
+  const AppBottomNavbar(
+      {Key? key,
+      required this.barItems,
+      required this.selectedIndex,
+      this.onButtonPressed})
+      : super(key: key);
+
+  final List<BarItem> barItems;
+  final int selectedIndex;
+  final VoidCallback? onButtonPressed;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        return _buildBlur(
-          child: Container(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight*0.08,
-            color: Colors.white.withOpacity(0.2),
-          ),
-        );
-      }
-    );
+    return SlidingClippedNavBar(
+        barItems: barItems,
+        selectedIndex: selectedIndex,
+        onButtonPressed: (index) {
+          onButtonPressed?.call();
+        },
+        activeColor: redRibbon);
   }
-
-  Widget _buildBlur(
-    {required Widget child,
-    double sigmaX =50,
-    double sigmay =50,
-    }
-  )=>  ClipRRect(
-    borderRadius: BorderRadius.zero,
-    child: BackdropFilter(filter:ImageFilter.blur(sigmaX: sigmaX,sigmaY: sigmay) ,child: child,));
 }

@@ -1,12 +1,11 @@
 import 'package:get/get.dart';
 import 'package:newsz/src/presentation/auth/auth_screen.dart';
 import 'package:newsz/src/presentation/forgot_password/forgot_password_screen.dart';
+import 'package:newsz/src/presentation/home/home_main_view.dart';
 import 'package:newsz/src/presentation/onboarding/onboarding_screen.dart';
 import 'package:newsz/src/presentation/sign_up/sign_up_screen_main.dart';
 import 'package:newsz/src/presentation/signin_options/signin_options_screen.dart';
 import 'package:newsz/src/presentation/splash/splash_screen.dart';
-
-import '../../presentation/home/home.dart';
 
 List<GetPage> appRoutes = [
   GetPage(
@@ -19,7 +18,7 @@ List<GetPage> appRoutes = [
   ),
   GetPage(
     name: "/home",
-    page: () => const HomeView(),
+    page: () => const HomeMainView(),
   ),
   GetPage(
     name: "/signinoptions",

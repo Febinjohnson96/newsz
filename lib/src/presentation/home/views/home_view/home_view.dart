@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:newsz/src/config/theme/appcolors.dart';
-import 'package:newsz/src/presentation/home/home_controller.dart';
+import 'package:newsz/src/presentation/home/views/home_view/home_controller.dart';
 import 'package:newsz/src/presentation/home/widgets/category_button.dart';
 import 'package:newsz/src/presentation/home/widgets/hero_news_element.dart';
 import 'package:newsz/src/presentation/home/widgets/news_card_widget.dart';
